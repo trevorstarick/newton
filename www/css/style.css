@@ -2,7 +2,16 @@
 #main {
 	background: url('../img/backgrounds/accommodations_back@2x.png');
 	background-size: 100%;
-	/*position: relative;*/
+}
+
+.title>img {
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 80%;
 }
 
 #search {
