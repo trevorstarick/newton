@@ -12,8 +12,22 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('listView', function($scope) {
-  $scope.items = [
+.controller('listView', function($scope, $http) {
+  console.log('lv');
+  // CAUSE I CAN'T GET NO...
+  // 
+  // $http.get('http://api.zilyo.com/places?lat=45.5086699&lng=-73.55399249999999')
+  //   .then(function(res) {
+  //     console.log('res',res);
+  //     $scope.items = res.data;
+  //   });
+
+  $scope.items = {
+    "page": 1,
+    "totalPages": 0,
+    "resultsPerPage": 15,
+    "totalResults": 0,
+    "items": [
       {
         "heading": "Grand 7 1/2 ensoleillé   Quartier Rosemont",
         "roomType": {
@@ -26,9 +40,9 @@ angular.module('starter.controllers', [])
         },
         "pid": "htp131489",
         "address": {
-          "city": "Montreal city",
-          "all": "7e avenue, Montreal city, Quebec, Canada - H1Y2N2",
-          "country": "Canada",
+          "city": "Montréal",
+          "all": "7e avenue, Montréal, Quebec, CA, H1Y2N2",
+          "country": "CA",
           "state": "Quebec",
           "neighbourhood": "",
           "postalCode": "H1Y2N2",
@@ -142,9 +156,9 @@ angular.module('starter.controllers', [])
         },
         "pid": "htp290085",
         "address": {
-          "city": "Montreal city",
-          "all": "Avenue de l'Hôtel de Ville, Le Plateau Mont-Royal, Montreal city, Quebec, Canada - h2w2h5",
-          "country": "Canada",
+          "city": "Montréal",
+          "all": "Avenue de l'Hôtel de Ville, Le Plateau Mont-Royal, Montréal, Quebec, CA, h2w2h5",
+          "country": "CA",
           "state": "Quebec",
           "neighbourhood": "Le Plateau Mont-Royal",
           "postalCode": "h2w2h5",
@@ -250,9 +264,9 @@ angular.module('starter.controllers', [])
         },
         "pid": "htp360031",
         "address": {
-          "city": "Montreal city",
-          "all": "2e Avenue, Montreal city, Quebec, Canada - h1y 2y4",
-          "country": "Canada",
+          "city": "Montréal",
+          "all": "2e Avenue, Montréal, Quebec, CA, h1y 2y4",
+          "country": "CA",
           "state": "Quebec",
           "neighbourhood": "",
           "postalCode": "h1y 2y4",
@@ -363,7 +377,7 @@ angular.module('starter.controllers', [])
         "pid": "htw10946",
         "address": {
           "city": "Montreal city",
-          "all": "Rue Saint-Denis, Ville-Marie, Montreal city, Quebec, Canada - H2X1G6",
+          "all": "Rue Saint-Denis, Ville-Marie, Montreal city, Quebec, Canada, H2X1G6",
           "country": "Canada",
           "state": "Quebec",
           "neighbourhood": "Ville-Marie",
@@ -435,7 +449,7 @@ angular.module('starter.controllers', [])
         "pid": "htw6383",
         "address": {
           "city": "Montreal city",
-          "all": "Avenue Henri-Julien, Le Plateau Mont-Royal, Montreal city, Quebec, Canada - H2X 3B6",
+          "all": "Avenue Henri-Julien, Le Plateau Mont-Royal, Montreal city, Quebec, Canada, H2X 3B6",
           "country": "Canada",
           "state": "Quebec",
           "neighbourhood": "Le Plateau Mont-Royal",
@@ -527,7 +541,7 @@ angular.module('starter.controllers', [])
         "pid": "htw47479",
         "address": {
           "city": "Montreal city",
-          "all": "Rue Stanley, Downtown, Montreal city, Quebec, Canada - H3A 3T1",
+          "all": "Rue Stanley, Downtown, Montreal city, Quebec, Canada, H3A 3T1",
           "country": "Canada",
           "state": "Quebec",
           "neighbourhood": "Downtown",
@@ -603,7 +617,7 @@ angular.module('starter.controllers', [])
         "pid": "nfl40520",
         "address": {
           "city": "Montreal city",
-          "all": "Boulevard René-Lévesque Est, Quartier Chinois, Montreal city, Quebec, Canada - H2X 1N2",
+          "all": "Boulevard René-Lévesque Est, Quartier Chinois, Montreal city, Quebec, Canada, H2X 1N2",
           "country": "Canada",
           "state": "Quebec",
           "neighbourhood": "Quartier Chinois",
@@ -707,7 +721,7 @@ angular.module('starter.controllers', [])
         "pid": "htw10314",
         "address": {
           "city": "Montreal city",
-          "all": "Rue du Fort, Downtown, Montreal city, Quebec, Canada - H3H 2T2",
+          "all": "Rue du Fort, Downtown, Montreal city, Quebec, Canada, H3H 2T2",
           "country": "Canada",
           "state": "Quebec",
           "neighbourhood": "Downtown",
@@ -770,9 +784,9 @@ angular.module('starter.controllers', [])
         },
         "pid": "htp129643",
         "address": {
-          "city": "Montreal city",
-          "all": "Boulevard Saint-Joseph Est, Le Plateau Mont-Royal, Montreal city, Quebec, Canada - H2T",
-          "country": "Canada",
+          "city": "Montréal",
+          "all": "Boulevard Saint-Joseph Est, Le Plateau Mont-Royal, Montréal, Quebec, CA, H2T",
+          "country": "CA",
           "state": "Quebec",
           "neighbourhood": "Le Plateau Mont-Royal",
           "postalCode": "H2T",
@@ -808,7 +822,7 @@ angular.module('starter.controllers', [])
             "caption": ""
           }
         ],
-        "price": 53,
+        "price": 52,
         "latLng": {
           "type": "Point",
           "coordinates": [
@@ -867,7 +881,7 @@ angular.module('starter.controllers', [])
         "pid": "tvmUpLhvSkO1s6",
         "address": {
           "city": "Montreal city",
-          "all": "Rue Marie-Anne Est, Le Plateau Mont-Royal, Montreal city, Quebec, Canada - H2W 2H5",
+          "all": "Rue Marie-Anne Est, Le Plateau Mont-Royal, Montreal city, Quebec, Canada, H2W 2H5",
           "country": "Canada",
           "state": "Quebec",
           "streetName": "Rue Marie-Anne Est",
@@ -1019,7 +1033,7 @@ angular.module('starter.controllers', [])
         "pid": "htw32079",
         "address": {
           "city": "Montreal city",
-          "all": "Rue Saint-Denis, Quartier Chinois, Montreal city, Quebec, Canada - H2L 2C4",
+          "all": "Rue Saint-Denis, Quartier Chinois, Montreal city, Quebec, Canada, H2L 2C4",
           "country": "Canada",
           "state": "Quebec",
           "neighbourhood": "Quartier Chinois",
@@ -1103,7 +1117,7 @@ angular.module('starter.controllers', [])
         "link": "http://www.hostelworld.com/hosteldetails.php/32079?affiliate=zilyo"
       },
       {
-        "heading": "2 BEDROOM FURNISHED SUITE AT SOLANO - 409",
+        "heading": "2 bedroom furnished suite at solano - 409",
         "roomType": {
           "text": "Entire Place",
           "id": 0
@@ -1114,9 +1128,9 @@ angular.module('starter.controllers', [])
         },
         "pid": "htp336214",
         "address": {
-          "city": "Montreal city",
-          "all": "Rue Notre-Dame Est, Gay Village, Montreal city, Quebec, Canada - H2L 0C5",
-          "country": "Canada",
+          "city": "Montréal",
+          "all": "Rue Notre-Dame Est, Gay Village, Montréal, Quebec, CA, H2L 0C5",
+          "country": "CA",
           "state": "Quebec",
           "neighbourhood": "Gay Village",
           "postalCode": "H2L 0C5",
@@ -1230,9 +1244,9 @@ angular.module('starter.controllers', [])
         },
         "pid": "htp281503",
         "address": {
-          "city": "Montreal city",
-          "all": "Rue Saint-Christophe, Le Plateau Mont-Royal, Montreal city, Quebec, Canada - H2L3X5",
-          "country": "Canada",
+          "city": "Montréal",
+          "all": "Rue Saint-Christophe, Le Plateau Mont-Royal, Montréal, Quebec, CA, H2L3X5",
+          "country": "CA",
           "state": "Quebec",
           "neighbourhood": "Le Plateau Mont-Royal",
           "postalCode": "H2L3X5",
@@ -1402,9 +1416,9 @@ angular.module('starter.controllers', [])
         },
         "pid": "htp357047",
         "address": {
-          "city": "Montreal city",
-          "all": "Rue Saint-Marc, Downtown, Montreal city, Quebec, Canada - H3H 2P1",
-          "country": "Canada",
+          "city": "Montréal",
+          "all": "Rue Saint-Marc, Downtown, Montréal, Quebec, CA, H3H 2P1",
+          "country": "CA",
           "state": "Quebec",
           "neighbourhood": "Downtown",
           "postalCode": "H3H 2P1",
@@ -1578,9 +1592,9 @@ angular.module('starter.controllers', [])
         },
         "pid": "htp336203",
         "address": {
-          "city": "Montreal city",
-          "all": "Rue du Séminaire, Vieux-Montréal, Montreal city, Quebec, Canada - H3C 2A3",
-          "country": "Canada",
+          "city": "Montréal",
+          "all": "Rue du Séminaire, Vieux-Montréal, Montréal, Quebec, CA, H3C 2A3",
+          "country": "CA",
           "state": "Quebec",
           "neighbourhood": "Vieux-Montréal",
           "postalCode": "H3C 2A3",
@@ -1698,18 +1712,11 @@ angular.module('starter.controllers', [])
         "provider": "housetrip",
         "link": "https://affiliate.housetrip.com/en/properties/336203?aid=outpost"
       }
-  ];
-})
+    ]
+  };
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+  //   
+  // ... INTERNETS PAST 2.
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
