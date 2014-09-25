@@ -30,15 +30,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       controller: 'AppCtrl'
     })
 
-    .state('app.root', {
-      url: "/",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/index.html"
-        }
-      }
-    })
-
     .state('app.search', {
       url: "/",
       views: {
@@ -63,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent' :{
           templateUrl: "templates/item.html",
-          controller: 'listView'
+          controller: 'itemView'
         }
       }
     });
