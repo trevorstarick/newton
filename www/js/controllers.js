@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
             "caption": ""
           }
         ],
-        "price": 226,
+        "price": 225,
         "latLng": {
           "type": "Point",
           "coordinates": [
