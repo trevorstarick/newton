@@ -1719,5 +1719,123 @@ angular.module('starter.controllers', [])
   // ... INTERNETS PAST 2.
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('itemView', function($scope, $stateParams) {
+  console.log('Scope:',$scope);
+  console.log('Params:',$stateParams);
+  $scope.data = {
+        "heading": "Grand 7 1/2 ensoleillé   Quartier Rosemont",
+        "roomType": {
+          "text": "Entire Place",
+          "id": 0
+        },
+        "propType": {
+          "text": "Apartment",
+          "id": 0
+        },
+        "pid": "htp131489",
+        "address": {
+          "city": "Montréal",
+          "all": "7e avenue, Montréal, Quebec, CA, H1Y2N2",
+          "country": "CA",
+          "state": "Quebec",
+          "neighbourhood": "",
+          "postalCode": "H1Y2N2",
+          "streetName": "7e avenue"
+        },
+        "photos": [
+          {
+            "url": "https://d3fw6fkxql67mc.cloudfront.net/photos/images/1667408/original.jpg?1348350375",
+            "caption": ""
+          },
+          {
+            "url": "https://d21c0uy0p6umop.cloudfront.net/photos/images/1667409/original.JPG?1348350411",
+            "caption": ""
+          },
+          {
+            "url": "https://d3fw6fkxql67mc.cloudfront.net/photos/images/1667410/original.JPG?1348350442",
+            "caption": ""
+          },
+          {
+            "url": "https://d3fw6fkxql67mc.cloudfront.net/photos/images/1667420/original.JPG?1348350658",
+            "caption": ""
+          },
+          {
+            "url": "https://d3fw6fkxql67mc.cloudfront.net/photos/images/1851416/original.png?1351008353",
+            "caption": ""
+          },
+          {
+            "url": "https://d21c0uy0p6umop.cloudfront.net/photos/images/1851419/original.png?1351008369",
+            "caption": ""
+          },
+          {
+            "url": "https://d21c0uy0p6umop.cloudfront.net/photos/images/1851423/original.png?1351008406",
+            "caption": ""
+          },
+          {
+            "url": "https://d3fw6fkxql67mc.cloudfront.net/photos/images/1851424/original.png?1351008420",
+            "caption": ""
+          },
+          {
+            "url": "https://d21c0uy0p6umop.cloudfront.net/photos/images/1851425/original.png?1351008434",
+            "caption": ""
+          },
+          {
+            "url": "https://d21c0uy0p6umop.cloudfront.net/photos/images/2818435/original.JPG?1366568407",
+            "caption": ""
+          },
+          {
+            "url": "https://d21c0uy0p6umop.cloudfront.net/photos/images/2818445/original.JPG?1366568501",
+            "caption": ""
+          }
+        ],
+        "price": 225,
+        "latLng": {
+          "type": "Point",
+          "coordinates": [
+            -73.5730767,
+            45.548192
+          ]
+        },
+        "description": "Situated in Montréal, this 2 bedroom apartment accommodates up to 8 guests and starts at just EUR 176 per night.\n\nThe accommodation is 149 sqm. It is located on the ground floor.\n\nIt also has internet (wifi, cable) access. It features 2 double beds and 2 sofa beds / futons and has 1 bathroom. Bed linens and towels are included.\n\nAdditionally, it offers a kitchen with a fridge, a freezer, a grill, a microwave, an oven, a coffee maker, a toaster, a kettle / water-boiler, a dryer, and a washing machine. The property has a balcony, a barbecue, a garden, and a terrace. Guests can also enjoy a CD player, a DVD player, a TV, video games/console, books, and board games.\n\nThis is a no-smoking property. Pets are not permitted.\n\n2 guests have been welcomed to this property.\n\nOnce you have booked, your host will contact you to arrange your check in.",
+        "occupancy": 8,
+        "bedroomCount": 3,
+        "bathroomCount": 1,
+        "bedCount": -1,
+        "amenities": [
+          {
+            "text": "Dryer",
+            "id": 4
+          },
+          {
+            "text": "Elevator",
+            "id": 11
+          },
+          {
+            "text": "Garden, Terrace",
+            "id": 23
+          },
+          {
+            "text": "Heating",
+            "id": 0
+          },
+          {
+            "text": "Internet Cable, Internet Wifi",
+            "id": 22
+          },
+          {
+            "text": "Internet Cable, Tv",
+            "id": 21
+          },
+          {
+            "text": "Jacuzzi",
+            "id": 13
+          },
+          {
+            "text": "Kitchen",
+            "id": 15
+          }
+        ],
+        "provider": "housetrip",
+        "link": "https://affiliate.housetrip.com/en/properties/131489?aid=outpost"
+  };
 });
