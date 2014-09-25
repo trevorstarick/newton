@@ -26,10 +26,19 @@
 	
 	background: #ffffff;
 }
-
+#list>.list {
+	height: 200px;
+}
+#list>.list>a {
+	padding: 0;
+}
 .listItem {
 	width: 100%;
 	height: 200px;
+
+	background-size: cover !important; 
+	background-position: 50%;
+
 	padding: 0;
 	border: 0;
 	margin: -1px 0px;
@@ -67,12 +76,19 @@
 
 .right {
 	text-align: right;
-	width: 25%;
 	right: 0;
 }
 
-.single-images>img {
-	height: 300px;
+#single p,a,h1,h2,h3,h4 {
+	padding: 0px 5px;
+}
+
+.single-images {
+	width: 100%;
+	height: 200px;
+
+	background-size: cover !important; 
+	background-position: 50%;
 }
 
 .single-description {
