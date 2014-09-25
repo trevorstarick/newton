@@ -61,3 +61,16 @@
 	width: 25%;
 	right: 0;
 }
+
+.single-images>img {
+	height: 300px;
+}
+
+.single-description {
+	text-align: justify;
+}
+
+.single-bookon>a {
+	color: #fff;
+	text-decoration: none;
+}
