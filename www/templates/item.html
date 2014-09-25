@@ -2,19 +2,20 @@
 	<ion-nav-buttons side="left">
 		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 	</ion-nav-buttons>
-  <ion-content class="has-header">
-    <h1 class="single-heading">{{data.heading}}</h1>
-    <h4 class="single-address">{{data.address.all}}</h4>
-    <div class="single-images">
-    	<img src="../img/foo.jpg" />
-    </div>
-    <p class="single-description">{{data.description}}</p>
+  <ion-content class="has-header" id="single">
+    <h1 class="single-heading">{{item.heading}}</h1>
+    <h4 class="single-address">{{item.address.all}}</h4>
+    <div class="single-images" style="background: url({{item.photos[0]
+        .url}})"></div>
+    <p class="single-description">{{item.description}}</p>
     <div class="single-map">
 			<!-- COMING SOON -->
     </div>
+    <a href="{{item.link}}">
     <button class="button button-block button-positive single-bookon">
-    	<a href="{{data.link}}">${{data.price}} on "{{data.provider}}.png"</a>
+    	${{item.price}} on "{{item.provider}}.png"
     </button>
-    <!-- {{data}} -->
+    </a>
+    <!-- {{item}} -->
   </ion-content>
 </ion-view>
