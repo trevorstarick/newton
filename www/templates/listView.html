@@ -3,11 +3,11 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <ion-list ng-repeat="item in items.items">
+    <ion-list ng-repeat="item in items.items" id="list">
       <a href="#/app/listView/{{item.pid}}">
-        <div id="{{item.pid}}" style="background: url({{item.photos[0]
-        .url}}); background-size: 100%">
-        <div class="item listItem" id="{{item.pid}}" style="background: url('../img/foo.jpg'); background-size: 100%">
+        <div class="item listItem" id="{{item.pid}}" style="background: url({{item.photos[0]
+        .url}})">
+        <!-- <div class="item listItem" id="{{item.pid}}" style="background: url('../img/foo.jpg'); background-size: 100%"> -->
           <div class="bottom">
             <div class="left">
               <h2>{{item.heading}}</h2>
