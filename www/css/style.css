@@ -1,0 +1,55 @@
+/* Empty. Add your own CSS if you like */
+#main {
+	background: url('../img/backgrounds/accommodations_back@2x.png');
+	background-size: 100%;
+	/*position: relative;*/
+}
+
+#search {
+	width: 90%;
+	height: 250px;
+
+	padding: 10px;
+
+	position: absolute;
+	top: 100px;
+	left: 5%;
+	
+	background: #ffffff;
+}
+
+.listItem {
+	width: 100%;
+	height: 200px;
+	padding: 0;
+}
+
+.bottom {
+	position: absolute;
+	background: rgba(0,54,99, .8);
+	color: white;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+}
+
+.bottom h1,h2,h3 {
+	color: white;
+}
+
+.left, .right {
+	position: absolute;
+	padding: 5px;
+	color: #fff;
+}
+
+.left {
+	width: 75%;
+	left: 0;
+}
+
+.right {
+	text-align: right;
+	width: 25%;
+	right: 0;
+}

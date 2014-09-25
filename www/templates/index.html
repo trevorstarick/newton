@@ -1,0 +1,32 @@
+<ion-view title="Zilyo">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header" id="main">
+    <div id="search">
+
+		<div class="list">
+
+		  <a class="item item-icon-left" on-release="location()">
+		    <i class="icon ion-location"></i>
+		    Location
+		  </a>
+		  <a class="item item-icon-left" on-release="guests()">
+		    <i class="icon ion-ios7-people"></i>
+		    Guests
+		  </a>
+
+		  <a class="item item-icon-left" on-release="dates()">
+		    <i class="icon ion-calendar"></i>
+		    Dates
+		  </a>
+
+		</div>
+
+		<!-- <button class="button button-block button-positive" on-release="search()"> -->
+		<button class="button button-block button-positive" ng-href="#/app/listView">
+		  Search
+		</button>
+    </div>
+  </ion-content>
+</ion-view>
