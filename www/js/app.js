@@ -17,6 +17,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    analytics.startTrackerWithId('UA-47163504-2');
+    analytics.trackView('NEWTON-START');
+    analytics.debugMode();
   });
 })
 
