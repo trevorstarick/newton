@@ -1,69 +1,65 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
+
+  $rootScope.$on('$locationChangeSuccess', function(scope, next, current) {
+    // Per page
+    scope.title = '<img src="img/nav_logo@2x.png">';
+  });
+
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
+
+    if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
+    if (window.StatusBar) {
       StatusBar.styleDefault();
     }
 
     analytics.startTrackerWithId('UA-47163504-2');
-    analytics.trackView('NEWTON-START');
-    analytics.debugMode();
+    analytics.trackView('search');
   });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl'
-    })
+  .state('app', {
+    url: "/app",
+    abstract: true,
+    templateUrl: "templates/menu.html",
+    controller: 'AppCtrl'
+  })
 
-    .state('app.search', {
-      url: "/",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/index.html"
-        }
+  .state('app.search', {
+    url: "/",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/index.html",
       }
-    })
+    }
+  })
 
-    .state('app.list', {
-      url: "/listView",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/listView.html",
-          controller: 'listView'
-        }
+  .state('app.list', {
+    url: "/listView",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/list.html",
+        controller: 'listCtrl'
       }
-    })
+    }
+  })
 
-    .state('app.single', {
-      url: "/listView/:itemId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/item.html",
-          controller: 'itemView'
-        }
+  .state('app.single', {
+    url: "/listView/:itemId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/single.html",
+        controller: 'singleCtrl'
       }
-    });
+    }
+  });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/');
 });
-
