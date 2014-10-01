@@ -1,3 +1,8 @@
+var analytics = analytics || {
+  trackView: function(){return true;},
+  addCustomDimension: function(){return true;}
+};
+
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $location) {

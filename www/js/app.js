@@ -15,9 +15,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
-
-    analytics.startTrackerWithId('UA-47163504-2');
-    analytics.trackView('search');
+    if(analytics) {
+      analytics.startTrackerWithId('UA-47163504-2');
+      analytics.trackView('search');
+    }
   });
 })
 
