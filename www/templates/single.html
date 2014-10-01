@@ -3,19 +3,71 @@
 		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 	</ion-nav-buttons>
   <ion-content class="has-header" id="single">
+    <div class="single-images" style="background: url({{item.photos[0].url}})"></div>
     <h1 class="single-heading">{{item.heading}}</h1>
-    <h4 class="single-address">{{item.address.all}}</h4>
-    <div class="single-images" style="background: url({{item.photos[0]
-        .url}})"></div>
-    <p class="single-description">{{item.description}}</p>
-    <div class="single-map">
-			<!-- COMING SOON -->
+    <h4 class="single-address">{{item.roomType.text}} - {{item.address.city}}, {{item.address.country}}</h4>
+
+    <div class="single-price">
+        <span>${{item.price}}</span>/night
     </div>
-    <a href="{{item.link}}">
-    <button class="button button-block button-positive single-bookon">
-    	${{item.price}} on "{{item.provider}}.png"
-    </button>
-    </a>
+
+    <div class="single-map">
+            {{item.latLng.coordinates}}
+    </div>
+
+    <div class="single-description">
+        <h3>Description</h3>
+        <p>{{item.description}}</p>
+    </div>
+    
+    <div class="single-images" style="background: url({{item.photos[1].url}})"></div>
+
+    <div class="single-details">
+        <h3>Details</h3>
+        <table>
+            <tr>
+                <td class="key">Accomodates</td>
+                <td class="value">{{item.occupancy}}</td>
+            </tr>
+            <tr>
+                <td class="key">Bedrooms</td>
+                <td class="value">{{item.bedroomCount}}</td>
+            </tr>
+            <tr>
+                <td class="key">Beds</td>
+                <td class="value">{{item.bedCount}}</td>
+            </tr>
+            <tr>
+                <td class="key">Bathrooms</td>
+                <td class="value">{{item.bathroomCount}}</td>
+            </tr>
+            <tr>
+                <td class="key">Room Type</td>
+                <td class="value">{{item.roomType.text}}</td>
+            </tr>
+            <tr>
+                <td class="key">Property Type</td>
+                <td class="value">{{item.propType.text}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="single-amenities">
+        <h3>Amenities</h3>
+        <div class="amenities" ng-repeat="a in item.amenities">
+            <div class="amenity">
+                <img src="http://placehold.it/50x50">
+                <p>{{a.text}}</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="single-provider">
+        <h3>Provide by</h3>
+        <p>{{item.provider}}.png</p>
+    </div>
+    
     <!-- {{item}} -->
   </ion-content>
 </ion-view>
