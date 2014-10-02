@@ -9,19 +9,27 @@ angular.module('starter.controllers', [])
   $scope.title = '<img src="img/nav_logo@2x.png">';
 })
 
-.controller('listCtrl', function($scope, $http) {
-  analytics.trackView('list');
-  analytics.addCustomDimension('list-coords', '45.5086699,-73.55399249999999');
+.controller('searchCtrl', function($scope, $rootScope, $location) {
+  $scope.location = '';
 
+  $scope.search = function(object) {
+    $rootScope.location = object;
+    $location.path('/app/listView', false);
+  };
+})
+
+.controller('listCtrl', function($scope, $rootScope, $http) {
+  console.log($scope.location);
+  $scope.coords = [$scope.location.geometry.location.k,$scope.location.geometry.location.B];
+  analytics.trackView('list');
+  analytics.addCustomDimension('list-coords', $scope.coords.join(','));
   $http({
-    url:'http://api.zilyo.com/places?lat=45.5086699&lng=-73.55399249999999',
+    url:'http://api.zilyo.com/places?lat='+$scope.coords[0]+'&lng='+$scope.coords[1],
     method: 'GET',
     cache: true
   }).then(function(res) {
-      console.log('list', res);
       
       res.data.items.forEach(function(e) {
-        console.log(e.pid);
         window.localStorage[e.pid] = JSON.stringify(e);
       });
 

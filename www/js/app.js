@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'google.places'])
 
 .run(function($ionicPlatform, $rootScope) {
 
